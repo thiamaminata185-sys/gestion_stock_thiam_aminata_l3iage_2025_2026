@@ -3,6 +3,7 @@ package com.gestionstock.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 
@@ -47,7 +48,13 @@ public class MainController {
             contenuPrincipale.getChildren().clear();
             contenuPrincipale.getChildren().add(vue);
         } catch(Exception e){
+            //correction
             e.printStackTrace();
+            Alert alerte = new Alert(Alert.AlertType.ERROR);
+            alerte.setTitle("Erreur de chargement");
+            alerte.setHeaderText(null);
+            alerte.setContentText("Impossible d'afficher cet écran pour le moment. Il n'est peut-être pas encore disponible.");
+            alerte.showAndWait();
         }
     }
 }

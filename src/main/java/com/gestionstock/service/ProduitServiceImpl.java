@@ -85,7 +85,7 @@ public class ProduitServiceImpl implements ProduitService {
         try {
             em.getTransaction().begin();
             Optional<Produit> produitOptional = findById(id);
-            if(produitOptional.isPresent()) em.remove(produitOptional);
+            if(produitOptional.isPresent()) em.remove(produitOptional.get()); //correction
             em.getTransaction().commit();
         } catch (Exception e){
             em.getTransaction().rollback();

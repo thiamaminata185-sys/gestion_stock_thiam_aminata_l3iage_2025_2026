@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.AddProduitDialogController" >
+   <children>
+      <Label text="Nom" />
+      <TextField fx:id="nameNom" />
+      <Label layoutX="10.0" layoutY="10.0" text="Prix" />
+      <TextField fx:id="namePrix" layoutX="10.0" layoutY="27.0" />
+      <Label layoutX="10.0" layoutY="10.0" text="Prix Promo" />
+      <TextField fx:id="namePrixpromo" layoutX="10.0" layoutY="27.0" />
+      <Label layoutX="10.0" layoutY="53.0" text="Quantite Stock" />
+      <TextField fx:id="nameQus" layoutX="10.0" layoutY="70.0" />
+      <Label layoutX="10.0" layoutY="95.0" text="Quantite Minimum" />
+      <TextField fx:id="nameQumin" layoutX="10.0" layoutY="113.0" />
+      <Label layoutX="10.0" layoutY="138.0" text="Categorie" />
+      <ComboBox fx:id="cmbCategorie" prefWidth="560.0" />
+      <Label layoutX="10.0" layoutY="181.0" text="Fournisseur" />
+      <ComboBox fx:id="cmbFournisseur" layoutX="10.0" layoutY="198.0" prefWidth="560.0" />
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnEnregistrer" mnemonicParsing="false" style="-fx-background-color: green;" text="Enregistrer" textFill="#f4f0f0" />
+            <Button fx:id="btnAnnuler" mnemonicParsing="false"  text="Annuler" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+   </padding>
+</VBox>

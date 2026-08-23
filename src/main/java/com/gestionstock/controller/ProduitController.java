@@ -9,13 +9,18 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+import javafx.stage.Stage;
+import javafx.stage.Modality;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +31,8 @@ public class ProduitController {
     TableColumn<Produit, Integer> colonneNom;
     @FXML
     TableColumn<Produit, Double> colonnePrix;
+    @FXML
+    TableColumn<Produit, Double> colonnePrixPromo;
     @FXML
     TableColumn<Produit, Integer> colonneStock;
     @FXML
@@ -61,6 +68,7 @@ public class ProduitController {
         // Lier chaque colonne à un attribut de la classe Produit
         colonneNom.setCellValueFactory( new PropertyValueFactory<>("nom"));
         colonnePrix.setCellValueFactory( new PropertyValueFactory<>("prix"));
+        colonnePrixPromo.setCellValueFactory( new PropertyValueFactory<>("prixPromo"));
         colonneStock.setCellValueFactory( new PropertyValueFactory<>("quantiteStock"));
         colonneStockMin.setCellValueFactory( new PropertyValueFactory<>("quantiteMin"));
         colonneCategorie.setCellValueFactory( data -> {
@@ -124,6 +132,31 @@ public class ProduitController {
         if (reponse.isPresent() && reponse.get() == ButtonType.OK) {
             produitService.deleteProduit(produitSelectionne.getId());
             chargerDonnees();
+        }
+    }
+    @FXML
+    private void ajouterProduits() {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/gestionstock/addProduitDialog.fxml")
+            );
+            Parent racine = loader.load();
+
+            AddProduitDialogController controleurAjout = loader.getController();
+            controleurAjout.setOnProduitAjoute(this::chargerDonnees);
+
+            Stage fenetreAjout = new Stage();
+            fenetreAjout.setTitle("Ajouter un produit");
+            fenetreAjout.initModality(Modality.APPLICATION_MODAL);
+            fenetreAjout.setScene(new Scene(racine));
+            fenetreAjout.showAndWait();
+
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText("Impossible d'ouvrir la fenêtre d'ajout");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
         }
     }
 }

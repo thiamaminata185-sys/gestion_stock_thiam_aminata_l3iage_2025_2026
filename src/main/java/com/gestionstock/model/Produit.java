@@ -54,11 +54,13 @@ public class Produit {
     public Produit() {
     }
 
-    public Produit(String nom, int quantiteStock, int quantiteMin, double prix, Categorie categorie, Fournisseur fournisseur) {
+    public Produit(int id, String nom, int quantiteStock, int quantiteMin, double prix, double prixPromo, Categorie categorie, Fournisseur fournisseur) {
+        this.id = id;
         this.nom = nom;
         this.quantiteStock = quantiteStock;
         this.quantiteMin = quantiteMin;
         this.prix = prix;
+        this.prixPromo = prixPromo;
         this.categorie = categorie;
         this.fournisseur = fournisseur;
     }
@@ -103,6 +105,15 @@ public class Produit {
         this.prix = prix;
     }
 
+
+    public double getPrixPromo() {
+        return prixPromo;
+    }
+
+    public void setPrixPromo(double prixPromo) {
+        this.prixPromo = prixPromo;
+    }
+
     public Categorie getCategorie() {
         return categorie;
     }
@@ -132,4 +143,6 @@ public class Produit {
                 ", fournisseur=" + fournisseur +
                 '}';
     }
+
+
 }
