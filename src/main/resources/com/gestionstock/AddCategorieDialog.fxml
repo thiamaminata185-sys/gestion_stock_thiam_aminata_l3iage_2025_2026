@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10.0"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.gestionstock.controller.AddCategorieDialogController"
+>
+    <children>
+        <GridPane hgap="10.0" vgap="12.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="100.0" />
+                <ColumnConstraints minWidth="220.0" prefWidth="240.0" />
+            </columnConstraints>
+            <children>
+                <Label text="Nom *" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="champNom" promptText="Nom de la catégorie" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="Description" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextArea fx:id="champDescription" prefRowCount="3" promptText="Description (optionnel)" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        <Label fx:id="labelErreur" wrapText="true" maxWidth="330.0" style="-fx-text-fill: red;" />
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</VBox>
