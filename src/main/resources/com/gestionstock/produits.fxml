@@ -7,14 +7,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.ProduitController">
     <children>
         <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
             <children>
                 <TextField fx:id="champRecherche" onKeyReleased="#rechercherProduits" prefWidth="300.0" promptText="Recheche" />
-                <Button mnemonicParsing="false" onAction="#ajouterProduits" prefWidth="90.0" styleClass="btn-primaire" text="Ajouter" />
-                <Button fx:id="boutonSupprimer" mnemonicParsing="false" onAction="#supprimerProduit" prefWidth="90.0" text="Supprimer" />
+                <Button mnemonicParsing="false" onAction="#ouvrirAjout" prefWidth="90.0" styleClass="btn-primaire" text="Ajouter" />
+                <Button fx:id="boutonSupprimer" mnemonicParsing="false" onAction="#supprimerProduit" prefWidth="90.0" text="Supprimer" styleClass="supprimer" />
+            </children>
+        </HBox>
+        <HBox prefHeight="35.0" spacing="10.0">
+            <children>
+                <ComboBox fx:id="filtreCategorie" prefWidth="180.0" />
+                <ComboBox fx:id="filtreFournisseur" prefWidth="180.0" />
+                <CheckBox fx:id="filtreStockBas" mnemonicParsing="false" text="Stock bas uniquement" />
             </children>
         </HBox>
         <TableView fx:id="tableProduits" prefWidth="640.0">
@@ -26,6 +35,7 @@
                 <TableColumn fx:id="colonneStockMin" prefWidth="100.0" text="Stock min." />
                 <TableColumn fx:id="colonneCategorie" prefWidth="110.0" text="Categorie" />
                 <TableColumn fx:id="colonneFournisseur" prefWidth="140.0" text="Fournisseur" />
+                <TableColumn fx:id="colonneActions" prefWidth="160.0" text="Actions" />
             </columns>
         </TableView>
     </children>

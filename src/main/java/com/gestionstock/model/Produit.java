@@ -41,6 +41,7 @@ public class Produit {
     @Column(nullable = false)
     private double prix;
 
+    @Column(nullable = true)
     private double prixPromo;
 
     @ManyToOne

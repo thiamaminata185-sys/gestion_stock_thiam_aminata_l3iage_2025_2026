@@ -16,7 +16,7 @@
         <HBox spacing="10.0">
             <children>
                 <Button mnemonicParsing="false" onAction="#ouvrirAjout" prefWidth="150.0" styleClass="btn-primaire" text="+ Nouveau Fournisseur" />
-                <Button fx:id="boutonSupprimer" mnemonicParsing="false" onAction="#supprimerFournisseur" prefWidth="90.0" text="Supprimer" />
+                <Button fx:id="boutonSupprimer" mnemonicParsing="false" onAction="#supprimerFournisseur" prefWidth="90.0" text="Supprimer" styleClass="supprimer"/>
             </children>
         </HBox>
         <TableView fx:id="tableFournisseurs" prefWidth="660.0">

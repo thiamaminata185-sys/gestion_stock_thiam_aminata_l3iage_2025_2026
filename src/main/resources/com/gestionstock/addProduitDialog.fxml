@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.AddProduitDialogController" >
+<VBox prefHeight="327.0" prefWidth="391.0" spacing="10.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.AddProduitDialogController">
    <children>
-      <Label text="Nom" />
-      <TextField fx:id="nameNom" />
-      <Label layoutX="10.0" layoutY="10.0" text="Prix" />
-      <TextField fx:id="namePrix" layoutX="10.0" layoutY="27.0" />
-      <Label layoutX="10.0" layoutY="10.0" text="Prix Promo" />
-      <TextField fx:id="namePrixpromo" layoutX="10.0" layoutY="27.0" />
-      <Label layoutX="10.0" layoutY="53.0" text="Quantite Stock" />
-      <TextField fx:id="nameQus" layoutX="10.0" layoutY="70.0" />
-      <Label layoutX="10.0" layoutY="95.0" text="Quantite Minimum" />
-      <TextField fx:id="nameQumin" layoutX="10.0" layoutY="113.0" />
-      <Label layoutX="10.0" layoutY="138.0" text="Categorie" />
-      <ComboBox fx:id="cmbCategorie" prefWidth="560.0" />
-      <Label layoutX="10.0" layoutY="181.0" text="Fournisseur" />
-      <ComboBox fx:id="cmbFournisseur" layoutX="10.0" layoutY="198.0" prefWidth="560.0" />
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <GridPane hgap="10.0" vgap="12.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="110.0" />
+            <ColumnConstraints minWidth="220.0" prefWidth="240.0" />
+         </columnConstraints>
          <children>
-            <Button fx:id="btnEnregistrer" mnemonicParsing="false" style="-fx-background-color: green;" text="Enregistrer" textFill="#f4f0f0" />
-            <Button fx:id="btnAnnuler" mnemonicParsing="false"  text="Annuler" />
+            <Label text="Nom *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="champNom" promptText="Nom du produit" GridPane.columnIndex="1" />
+
+            <Label text="Catégorie *" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="comboCategorie" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Fournisseur *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="comboFournisseur" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Prix *" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="champPrix" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Prix Promo" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="champPrixPromo" promptText="Optionnel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Quantité stock *" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="champQuantiteStock" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Label text="Quantité min *" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextField fx:id="champQuantiteMin" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </HBox>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <Label fx:id="labelErreur" maxWidth="330.0" style="-fx-text-fill: red;" wrapText="true" />
    </children>
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
    </padding>
 </VBox>

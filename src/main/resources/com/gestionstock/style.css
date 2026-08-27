@@ -1,5 +1,10 @@
 .btn-primaire {
-    -fx-background-color: #3498db;
+    -fx-background-color: #203961;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.supprimer{
+    -fx-background-color: red;
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
