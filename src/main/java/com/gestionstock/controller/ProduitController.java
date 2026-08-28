@@ -76,6 +76,7 @@ public class ProduitController {
         configurerColones();
         configurerFiltres();
         chargerDonnees();
+        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
     }
 
     private void configurerColones() {
@@ -239,7 +240,6 @@ public class ProduitController {
 
     @FXML
     private void supprimerProduit() {
-        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
         Produit produitSelectionne = tableProduits.getSelectionModel().getSelectedItem();
 
         if (produitSelectionne == null) {

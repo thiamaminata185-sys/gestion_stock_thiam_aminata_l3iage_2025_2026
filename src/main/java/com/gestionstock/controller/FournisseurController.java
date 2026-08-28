@@ -40,6 +40,7 @@ public class FournisseurController {
     public void initialize() {
         configurerColonnes();
         chargerDonnees();
+        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
     }
 
     private void configurerColonnes() {
@@ -97,7 +98,6 @@ public class FournisseurController {
 
     @FXML
     private void supprimerFournisseur() {
-        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
         Fournisseur selection = tableFournisseurs.getSelectionModel().getSelectedItem();
         if (selection == null) {
             afficherInfo("Aucune sélection", "Veuillez sélectionner un fournisseur à supprimer.");

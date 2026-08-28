@@ -38,6 +38,7 @@ public class CategorieController {
     public void initialize() {
         configurerColonnes();
         chargerDonnees();
+        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
     }
 
     private void configurerColonnes() {
@@ -95,7 +96,6 @@ public class CategorieController {
 
     @FXML
     private void supprimerCategorie() {
-        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
         Categorie selection = tableCategories.getSelectionModel().getSelectedItem();
         if (selection == null) {
             afficherInfo("Aucune sélection", "Veuillez sélectionner une catégorie à supprimer.");
