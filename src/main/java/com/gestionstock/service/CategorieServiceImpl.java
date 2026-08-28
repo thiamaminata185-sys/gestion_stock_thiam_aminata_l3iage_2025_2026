@@ -2,6 +2,7 @@ package com.gestionstock.service;
 
 import com.gestionstock.model.Categorie;
 import com.gestionstock.model.Produit;
+import com.gestionstock.util.SessionUtilisateur;
 import com.gestionstock.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 
@@ -59,6 +60,9 @@ public class CategorieServiceImpl implements CategorieService {
 
     @Override
     public void deleteCategorie(int id) {
+        if (!SessionUtilisateur.estAdmin()) {
+            throw new SecurityException("Seul un administrateur peut supprimer une catégorie.");
+        }
         EntityManager em = JPAUtil.getEntityManager();
         try {
             em.getTransaction().begin();

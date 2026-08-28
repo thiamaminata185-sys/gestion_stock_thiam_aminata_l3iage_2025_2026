@@ -2,6 +2,7 @@ package com.gestionstock.service;
 
 import com.gestionstock.model.Fournisseur;
 import com.gestionstock.model.Produit;
+import com.gestionstock.util.SessionUtilisateur;
 import com.gestionstock.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 
@@ -59,6 +60,9 @@ public class FournisseurServiceImpl implements FournisseurService {
 
     @Override
     public void deleteFournisseur(int id) {
+        if (!SessionUtilisateur.estAdmin()) {
+            throw new SecurityException("Seul un administrateur peut supprimer un fournisseur.");
+        }
         EntityManager em = JPAUtil.getEntityManager();
         try {
             em.getTransaction().begin();

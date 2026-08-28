@@ -2,6 +2,8 @@ package com.gestionstock.model;
 
 import jakarta.persistence.*;
 
+
+
 /**
  * @Entity représente une table de la base de données, Hibernate se charge
  * du mapping entre la classe et la table. Ceci indique qu'il s'agit d'une entité JPA

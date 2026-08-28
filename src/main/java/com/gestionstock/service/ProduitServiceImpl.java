@@ -2,6 +2,7 @@ package com.gestionstock.service;
 
 import com.gestionstock.model.Produit;
 import com.gestionstock.util.DatabaseConfig;
+import com.gestionstock.util.SessionUtilisateur;
 import com.gestionstock.util.JPAUtil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
@@ -81,6 +82,11 @@ public class ProduitServiceImpl implements ProduitService {
 
     @Override
     public void deleteProduit(int id) {
+        // Sécurité côté serveur : ne JAMAIS se fier uniquement à l'UI (bouton désactivé).
+        // Même si quelqu'un contournait l'interface, cette vérification bloque la suppression.
+        if (!SessionUtilisateur.estAdmin()) {
+            throw new SecurityException("Seul un administrateur peut supprimer un produit.");
+        }
         EntityManager em = JPAUtil.getEntityManager();
         try {
             em.getTransaction().begin();
