@@ -29,6 +29,8 @@ public class FournisseurController {
     @FXML
     private TableColumn<Fournisseur, Long> colonneNbProduits;
     @FXML
+    Button boutonSupprimer;
+    @FXML
     private TableColumn<Fournisseur, Void> colonneActions;
 
     private final FournisseurService fournisseurService = new FournisseurServiceImpl();
@@ -95,6 +97,7 @@ public class FournisseurController {
 
     @FXML
     private void supprimerFournisseur() {
+        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
         Fournisseur selection = tableFournisseurs.getSelectionModel().getSelectedItem();
         if (selection == null) {
             afficherInfo("Aucune sélection", "Veuillez sélectionner un fournisseur à supprimer.");

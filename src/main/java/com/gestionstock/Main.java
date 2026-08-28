@@ -18,7 +18,7 @@ public class Main extends Application {
         //DatabaseConfig.testerConnection();
 
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/gestionstock/main.fxml")
+                getClass().getResource("/com/gestionstock/LoginView.fxml")
         );
 
         Scene scene = new Scene(loader.load());

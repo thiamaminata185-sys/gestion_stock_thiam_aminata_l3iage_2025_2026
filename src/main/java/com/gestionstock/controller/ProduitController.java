@@ -24,6 +24,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableCell;
+import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
@@ -52,6 +53,8 @@ public class ProduitController {
     TableColumn<Produit, String> colonneFournisseur;
     @FXML
     TextField champRecherche;
+    @FXML
+    Button boutonSupprimer;
     @FXML
     ComboBox<Categorie> filtreCategorie;
     @FXML
@@ -236,6 +239,7 @@ public class ProduitController {
 
     @FXML
     private void supprimerProduit() {
+        boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
         Produit produitSelectionne = tableProduits.getSelectionModel().getSelectedItem();
 
         if (produitSelectionne == null) {

@@ -65,3 +65,18 @@ INSERT INTO fournisseurs(nom, email, tel) VALUES
 INSERT INTO produits(nom, prix, quantite_stock, quantite_min, categorie_id, fournisseur_id) VALUES
     ("Ordinateur Portable", 550000.0, 15, 3, 1, 1),
     ("Bureau en bois", 87000.0, 8, 2, 2, 2);
+
+-- Comptes de test. Mots de passe en clair (à utiliser UNIQUEMENT pour se connecter à l'appli) :
+--   admin@gestionstock.sn    / admin123
+--   gestionnaire@gestionstock.sn / gestion123
+-- Les hachages ci-dessous ont été générés avec BCrypt (jamais de mot de passe en clair en base).
+INSERT INTO utilisateurs(email, nom, mot_de_passe_hash, role) VALUES
+                                                                  ('admin@gestionstock.sn', 'Admin Principal', '$2a$12$BOMGkcaXIWeg01vIiM4AXuYz.z5rb/u43dBAAAwg4AAFg2/HzuYCW', 'ADMIN'),
+                                                                  ('gestionnaire@gestionstock.sn', 'Gestionnaire Test', '$2a$12$fGGm78Crsr1u4j3g4EltaejY3ytGxO1XXnUy157q52jjqILkq5VGy', 'GESTIONNAIRE');
+
+-- Quelques mouvements de test pour peupler le dashboard et les statistiques
+INSERT INTO mouvements(type, quantite, motif, produit_id, date_mouvement) VALUES
+                                                                              ('ENTRE', 20, 'Réception commande fournisseur', 1, NOW()),
+                                                                              ('SORTIE', 5, 'Vente client', 1, NOW()),
+                                                                              ('ENTRE', 10, 'Réception commande fournisseur', 2, NOW() - INTERVAL 1 DAY),
+                                                                              ('SORTIE', 2, 'Vente client', 2, NOW());

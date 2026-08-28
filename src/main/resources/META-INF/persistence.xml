@@ -10,6 +10,7 @@
         <class>com.gestionstock.model.Categorie</class>
         <class>com.gestionstock.model.Fournisseur</class>
         <class>com.gestionstock.model.Mouvement</class>
+        <class>com.gestionstock.model.Utilisateur</class>
 
 
         <properties>
