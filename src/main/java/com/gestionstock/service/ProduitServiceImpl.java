@@ -90,12 +90,18 @@ public class ProduitServiceImpl implements ProduitService {
         EntityManager em = JPAUtil.getEntityManager();
         try {
             em.getTransaction().begin();
-            Optional<Produit> produitOptional = findById(id);
-            if(produitOptional.isPresent()) em.remove(produitOptional.get()); //correction
+            // em.find() re-cherche l'entité via CET EntityManager (celui de la transaction en cours),
+            // car findById() ci-dessus utilise un AUTRE EntityManager (déjà fermé) : on ne peut pas
+            // remove() une entité "détachée" d'un EntityManager différent.
+            Produit produit = em.find(Produit.class, id);
+            if (produit != null) {
+                em.remove(produit);
+            }
             em.getTransaction().commit();
         } catch (Exception e){
             em.getTransaction().rollback();
-            throw new RuntimeException("Erreur lors de la suppression du produit");
+            e.printStackTrace();
+            throw new RuntimeException("Erreur lors de la suppression du produit",e);
         } finally {
             em.close();
         }

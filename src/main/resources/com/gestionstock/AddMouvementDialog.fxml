@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<VBox spacing="10.0"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.gestionstock.controller.AddMouvementDialogController"
+>
+    <fx:define>
+        <ToggleGroup fx:id="groupeType" />
+    </fx:define>
+    <children>
+        <GridPane hgap="10.0" vgap="12.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="110.0" />
+                <ColumnConstraints minWidth="220.0" prefWidth="240.0" />
+            </columnConstraints>
+            <children>
+                <Label text="Produit *" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <ComboBox fx:id="comboProduit" maxWidth="Infinity" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="Type *" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <HBox spacing="15.0" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <children>
+                        <RadioButton fx:id="radioEntree" mnemonicParsing="false" selected="true" text="Entrée" toggleGroup="$groupeType" />
+                        <RadioButton fx:id="radioSortie" mnemonicParsing="false" text="Sortie" toggleGroup="$groupeType" />
+                    </children>
+                </HBox>
+
+                <Label text="Quantité *" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="champQuantite" promptText="0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                <Label text="Motif" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <TextField fx:id="champMotif" promptText="Obligatoire pour une sortie" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                <Label text="Stock actuel" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                <Label fx:id="labelStockActuel" text="—" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+                <Label style="-fx-font-weight: bold;" text="Stock après" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                <Label fx:id="labelStockApres" style="-fx-font-weight: bold;" text="—" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        <Label fx:id="labelErreur" wrapText="true" maxWidth="330.0" style="-fx-text-fill: red;" />
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</VBox>

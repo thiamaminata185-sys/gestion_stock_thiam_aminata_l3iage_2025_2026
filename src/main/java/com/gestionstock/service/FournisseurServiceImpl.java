@@ -76,8 +76,10 @@ public class FournisseurServiceImpl implements FournisseurService {
                 throw new IllegalStateException(
                         "Impossible de supprimer ce fournisseur : " + nbProduits + " produit(s) y sont encore rattachés.");
             }
-            Optional<Fournisseur> fournisseurOptional = findById(id);
-            if(fournisseurOptional.isPresent()) em.remove(fournisseurOptional.get()); //correction
+            Fournisseur fournisseur = em.find(Fournisseur.class, id);
+            if (fournisseur != null) {
+                em.remove(fournisseur);
+            }
             em.getTransaction().commit();
         } catch (IllegalStateException e) {
             throw e;

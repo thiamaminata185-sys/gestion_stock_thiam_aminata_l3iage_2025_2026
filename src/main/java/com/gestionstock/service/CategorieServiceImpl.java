@@ -81,8 +81,10 @@ public class CategorieServiceImpl implements CategorieService {
                         "Impossible de supprimer cette catégorie : " + nbProduits + " produit(s) y sont encore rattachés.");
             }
 
-            Optional<Categorie> categorieOptional = findById(id);
-            if(categorieOptional.isPresent()) em.remove(categorieOptional.get());
+            Categorie categorie = em.find(Categorie.class, id);
+            if (categorie != null) {
+                em.remove(categorie);
+            }
             em.getTransaction().commit();
         } catch (IllegalStateException e) {
             throw e; // message métier à afficher tel quel dans l'UI
