@@ -14,10 +14,9 @@
    <top>
       <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
          <children>
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Gestion de Stock" />
             <Region HBox.hgrow="ALWAYS" />
             <Label fx:id="labelUtilisateurConnecte" style="-fx-text-fill: #555555;" text="" />
-            <Button fx:id="boutonDeconnexion" mnemonicParsing="false" onAction="#seDeconnecter" text="Déconnexion" />
+            <Button fx:id="boutonDeconnexion" mnemonicParsing="false" onAction="#seDeconnecter" styleClass="btn-primaire" text="Déconnexion" />
          </children>
          <padding>
             <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
@@ -45,4 +44,19 @@
          </children>
       </StackPane>
    </center>
+
+   <bottom>
+      <VBox style="-fx-background-color: #203961;" styleClass="footer-container" BorderPane.alignment="CENTER">
+         <children>
+
+            <!-- Séparateur -->
+            <Separator style="-fx-background-color: #203961;" styleClass="footer-separator" />
+
+            <!-- Copyright -->
+            <HBox alignment="CENTER" style="-fx-padding: 5 0 0 0; -fx-background-color: 203961;">
+               <Label style="-fx-text-fill: white;" styleClass="copyright" text="© 2026 Gestion Stock - Tous droits réservés. Conçu avec ❤️ au Sénégal." />
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>

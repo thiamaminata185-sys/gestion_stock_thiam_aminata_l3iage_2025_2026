@@ -41,6 +41,7 @@ public class FournisseurController {
         configurerColonnes();
         chargerDonnees();
         boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
+        tableFournisseurs.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     private void configurerColonnes() {
@@ -59,6 +60,7 @@ public class FournisseurController {
             private final HBox conteneur = new HBox(6, boutonModifier);
 
             {
+                boutonModifier.getStyleClass().add("bouton-jaune");
                 boutonModifier.setOnAction(e -> ouvrirModification(getFournisseurDeLaLigne()));
             }
 
@@ -142,6 +144,7 @@ public class FournisseurController {
             Button boutonOk = (Button) dialog.getDialogPane().lookupButton(ButtonType.OK);
             boutonOk.setText("Enregistrer");
             boutonOk.setDisable(true);
+            boutonOk.getStyleClass().add("bouton-vert");
             controleurFormulaire.setOnChangement(() -> boutonOk.setDisable(!controleurFormulaire.estValide()));
 
             dialog.setResultConverter(bouton -> {

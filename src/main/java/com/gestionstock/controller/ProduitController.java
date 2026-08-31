@@ -77,6 +77,7 @@ public class ProduitController {
         configurerFiltres();
         chargerDonnees();
         boutonSupprimer.setDisable(!com.gestionstock.util.SessionUtilisateur.estAdmin());
+        tableProduits.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     private void configurerColones() {
@@ -117,7 +118,9 @@ public class ProduitController {
             private final HBox conteneur = new HBox(6, boutonModifier);
 
             {
+                boutonModifier.getStyleClass().add("bouton-jaune");
                 boutonModifier.setOnAction(e -> ouvrirFormulaire(getProduitDeLaLigne()));
+
             }
 
             private Produit getProduitDeLaLigne() {
@@ -213,7 +216,8 @@ public class ProduitController {
 
             Button boutonOk = (Button) dialog.getDialogPane().lookupButton(ButtonType.OK);
             boutonOk.setText("Enregistrer");
-            boutonOk.setDisable(true); // désactivé tant que le formulaire n'est pas valide
+            boutonOk.setDisable(true);// désactivé tant que le formulaire n'est pas valide
+            boutonOk.getStyleClass().add("bouton-vert");
             controleurFormulaire.setOnChangement(() -> boutonOk.setDisable(!controleurFormulaire.estValide()));
 
             dialog.setResultConverter(bouton -> {

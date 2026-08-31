@@ -10,11 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" spacing="12.0"
-      xmlns="http://javafx.com/javafx/26"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.gestionstock.controller.MouvementController"
->
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="760.0" spacing="12.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.MouvementController">
     <children>
         <HBox spacing="10.0">
             <children>
@@ -28,7 +24,7 @@
                 <DatePicker fx:id="dateDebut" prefWidth="140.0" />
                 <Label text="au" />
                 <DatePicker fx:id="dateFin" prefWidth="140.0" />
-                <Button mnemonicParsing="false" onAction="#appliquerFiltres" text="Filtrer" />
+                <Button mnemonicParsing="false" onAction="#appliquerFiltres" styleClass="filtrer" text="Filtrer" />
                 <Button mnemonicParsing="false" onAction="#reinitialiserFiltres" text="Réinitialiser" />
             </children>
         </HBox>

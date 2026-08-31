@@ -2,6 +2,8 @@ package com.gestionstock.controller;
 
 import com.gestionstock.model.Utilisateur;
 import com.gestionstock.util.SessionUtilisateur;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,8 +14,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /*
     -@FXML: Annotation qui connecte un attribut Java à un composant déclaré dans le fichier XML via son fx:id
@@ -27,10 +32,13 @@ public class MainController {
     @FXML
     private Button boutonDeconnexion;
 
+
     @FXML
     public void initialize() {
         afficherUtilisateurConnecte();
         afficherDashboard();
+
+
     }
 
     private void afficherUtilisateurConnecte() {
@@ -105,4 +113,6 @@ public class MainController {
             alerte.showAndWait();
         }
     }
+
+
 }

@@ -56,6 +56,7 @@ public class MouvementController {
         configurerColonnes();
         configurerFiltreType();
         chargerDonnees();
+        tableMouvements.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     private void configurerColonnes() {

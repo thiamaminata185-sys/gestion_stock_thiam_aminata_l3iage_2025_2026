@@ -6,32 +6,28 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" spacing="18.0"
-      xmlns="http://javafx.com/javafx/26"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.gestionstock.controller.DashboardController"
->
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="760.0" spacing="18.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.DashboardController">
     <children>
         <HBox spacing="15.0">
             <children>
-                <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: #203961; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label style="-fx-text-fill: #808080; -fx-font-size: 12;" text="Total produits" />
-                        <Label fx:id="labelTotalProduits" style="-fx-font-size: 26; -fx-font-weight: bold;" text="—" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 12;" text="Total produits" />
+                        <Label fx:id="labelTotalProduits" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="—" />
                     </children>
                     <padding><Insets bottom="18.0" left="18.0" right="18.0" top="18.0" /></padding>
                 </VBox>
-                <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: red; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label style="-fx-text-fill: #808080; -fx-font-size: 12;" text="Stock bas" />
-                        <Label fx:id="labelStockBas" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #c0392b;" text="—" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 12;" text="Stock bas" />
+                        <Label fx:id="labelStockBas" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="—" />
                     </children>
                     <padding><Insets bottom="18.0" left="18.0" right="18.0" top="18.0" /></padding>
                 </VBox>
-                <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: green; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label style="-fx-text-fill: #808080; -fx-font-size: 12;" text="Valeur totale du stock" />
-                        <Label fx:id="labelValeurStock" style="-fx-font-size: 22; -fx-font-weight: bold;" text="—" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 12;" text="Valeur totale du stock" />
+                        <Label fx:id="labelValeurStock" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: white;" text="—" />
                     </children>
                     <padding><Insets bottom="18.0" left="18.0" right="18.0" top="18.0" /></padding>
                 </VBox>

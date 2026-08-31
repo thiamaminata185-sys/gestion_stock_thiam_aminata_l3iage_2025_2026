@@ -12,11 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="780.0"
-      xmlns="http://javafx.com/javafx/26"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.gestionstock.controller.StatistiquesController"
->
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionstock.controller.StatistiquesController">
     <content>
         <VBox spacing="18.0">
             <children>
@@ -26,30 +22,33 @@
                         <DatePicker fx:id="dateDebut" prefWidth="140.0" />
                         <Label text="au" />
                         <DatePicker fx:id="dateFin" prefWidth="140.0" />
-                        <Button mnemonicParsing="false" onAction="#appliquerFiltre" text="Filtrer" />
+                        <Button mnemonicParsing="false" onAction="#appliquerFiltre" style="-fx-background-color: orange;" text="Filtrer" />
                         <Button mnemonicParsing="false" onAction="#reinitialiserFiltre" text="Réinitialiser" />
                     </children>
                 </HBox>
 
                 <HBox spacing="15.0">
                     <children>
-                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: green; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label style="-fx-text-fill: #808080; -fx-font-size: 11;" text="Valeur totale du stock" />
-                                <Label fx:id="labelValeurStock" style="-fx-font-size: 18; -fx-font-weight: bold;" text="—" />
+                                <Label style="-fx-text-fill: white; -fx-font-size: 11;" text="Valeur totale du stock" />
+                                <Label fx:id="labelValeurStock" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="—" />
                             </children>
                             <padding><Insets bottom="14.0" left="12.0" right="12.0" top="14.0" /></padding>
                         </VBox>
-                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: blue; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label style="-fx-text-fill: #808080; -fx-font-size: 11;" text="Produit le + mouvementé" />
-                                <Label fx:id="labelProduitTop" style="-fx-font-size: 14; -fx-font-weight: bold;" text="—" wrapText="true" />
+                                <Label style="-fx-text-fill: white; -fx-font-size: 11;" text="Produit le + mouvementé">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></Label>
+                                <Label fx:id="labelProduitTop" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="—" wrapText="true" />
                             </children>
                             <padding><Insets bottom="14.0" left="12.0" right="12.0" top="14.0" /></padding>
                         </VBox>
-                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: yellow; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label style="-fx-text-fill: #808080; -fx-font-size: 11;" text="Catégorie + forte valeur" />
+                                <Label style="-fx-text-fill: black; -fx-font-size: 11;" text="Catégorie + forte valeur" />
                                 <Label fx:id="labelCategorieTop" style="-fx-font-size: 14; -fx-font-weight: bold;" text="—" wrapText="true" />
                             </children>
                             <padding><Insets bottom="14.0" left="12.0" right="12.0" top="14.0" /></padding>
@@ -58,17 +57,17 @@
                 </HBox>
                 <HBox spacing="15.0">
                     <children>
-                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: #42f5d1; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label style="-fx-text-fill: #808080; -fx-font-size: 11;" text="Fournisseur + de produits" />
+                                <Label style="-fx-text-fill: black; -fx-font-size: 11;" text="Fournisseur + de produits" />
                                 <Label fx:id="labelFournisseurTop" style="-fx-font-size: 14; -fx-font-weight: bold;" text="—" wrapText="true" />
                             </children>
                             <padding><Insets bottom="14.0" left="12.0" right="12.0" top="14.0" /></padding>
                         </VBox>
-                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
+                        <VBox alignment="CENTER" spacing="6.0" style="-fx-background-color: red; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-radius: 8;" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label style="-fx-text-fill: #808080; -fx-font-size: 11;" text="Sorties vers rupture évitée" />
-                                <Label fx:id="labelRuptureEvitee" style="-fx-font-size: 18; -fx-font-weight: bold;" text="—" />
+                                <Label style="-fx-text-fill: white; -fx-font-size: 11;" text="Sorties vers rupture évitée" />
+                                <Label fx:id="labelRuptureEvitee" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="—" />
                             </children>
                             <padding><Insets bottom="14.0" left="12.0" right="12.0" top="14.0" /></padding>
                         </VBox>
