@@ -51,7 +51,7 @@ public class CategorieController {
         configurerColonneActions();
     }
 
-    /** Colonne "Actions" avec un bouton Modifier et un bouton Supprimer sur CHAQUE ligne. */
+    /** Colonne "Actions" avec un bouton Modifier  */
     private void configurerColonneActions() {
         colonneActions.setCellFactory(colonne -> new TableCell<>() {
             private final Button boutonModifier = new Button("Modifier");

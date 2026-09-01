@@ -2,6 +2,7 @@ package com.gestionstock.service;
 
 import com.gestionstock.model.Utilisateur;
 import com.gestionstock.util.JPAUtil;
+import com.gestionstock.util.SessionUtilisateur;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import org.mindrot.jbcrypt.BCrypt;
@@ -75,6 +76,12 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 
     @Override
     public void activerDesactiver(Long id, boolean actif) {
+        // Défense en profondeur (même principe que pour les suppressions Produit/Categorie/
+        // Fournisseur) : l'UI empêche déjà un GESTIONNAIRE d'accéder à cet écran, mais on ne
+        if (!SessionUtilisateur.estAdmin()) {
+            throw new SecurityException("Seul un administrateur peut activer/désactiver un compte utilisateur.");
+        }
+
         EntityManager em = JPAUtil.getEntityManager();
         try {
             em.getTransaction().begin();

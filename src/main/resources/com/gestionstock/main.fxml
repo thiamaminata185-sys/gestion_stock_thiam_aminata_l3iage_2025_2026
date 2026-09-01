@@ -14,6 +14,7 @@
    <top>
       <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: white; -fx-border-color: #dddddd; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
          <children>
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Gestion de Stock" />
             <Region HBox.hgrow="ALWAYS" />
             <Label fx:id="labelUtilisateurConnecte" style="-fx-text-fill: #555555;" text="" />
             <Button fx:id="boutonDeconnexion" mnemonicParsing="false" onAction="#seDeconnecter" styleClass="btn-primaire" text="Déconnexion" />
@@ -34,6 +35,7 @@
             <Button fx:id="btnFournisseurs" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#afficherFournisseurs" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Fournisseurs" />
             <Button fx:id="btnMouvements" mnemonicParsing="false" onAction="#afficherMouvements" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Mouvements" />
             <Button fx:id="btnStatistiques" mnemonicParsing="false" onAction="#afficherStatistiques" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Statistiques" />
+            <Button fx:id="btnUtilisateurs" mnemonicParsing="false" onAction="#afficherUtilisateurs" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Utilisateurs" />
          </children>
       </VBox>
    </left>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="680.0" spacing="15.0"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.gestionstock.controller.UtilisateurController"
+>
+    <children>
+        <TableView fx:id="tableUtilisateurs" prefWidth="640.0">
+            <columns>
+                <TableColumn fx:id="colonneNom" prefWidth="150.0" text="Nom" />
+                <TableColumn fx:id="colonneEmail" prefWidth="200.0" text="Email" />
+                <TableColumn fx:id="colonneRole" prefWidth="110.0" text="Rôle" />
+                <TableColumn fx:id="colonneStatut" prefWidth="90.0" text="Statut" />
+                <TableColumn fx:id="colonneActions" prefWidth="130.0" text="Actions" />
+            </columns>
+        </TableView>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

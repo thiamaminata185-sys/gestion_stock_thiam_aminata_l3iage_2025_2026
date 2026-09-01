@@ -31,13 +31,16 @@ public class MainController {
     private Label labelUtilisateurConnecte;
     @FXML
     private Button boutonDeconnexion;
+    @FXML
+    private Button btnUtilisateurs;
 
 
     @FXML
     public void initialize() {
         afficherUtilisateurConnecte();
         afficherDashboard();
-
+        btnUtilisateurs.setVisible(SessionUtilisateur.estAdmin());
+        btnUtilisateurs.setManaged(SessionUtilisateur.estAdmin());
 
     }
 
@@ -78,6 +81,19 @@ public class MainController {
     @FXML
     private void afficherStatistiques() {
         chargerVue("/com/gestionstock/statistiques.fxml");
+    }
+
+    @FXML
+    private void afficherUtilisateurs() {
+        if (!com.gestionstock.util.SessionUtilisateur.estAdmin()) {
+            Alert alerte = new Alert(Alert.AlertType.WARNING);
+            alerte.setTitle("Accès refusé");
+            alerte.setHeaderText(null);
+            alerte.setContentText("Cette section est réservée aux administrateurs.");
+            alerte.showAndWait();
+            return;
+        }
+        chargerVue("/com/gestionstock/UtilisateursView.fxml");
     }
 
     @FXML
